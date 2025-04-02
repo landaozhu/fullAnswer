@@ -2,6 +2,7 @@ var http = require("http")
 var url = require("url")
  
 http.createServer((req, res) => {
+    console.log(req)
     var urlobj = url.parse(req.url, true)
     console.log(urlobj.query.callback);
     switch (urlobj.pathname) {
