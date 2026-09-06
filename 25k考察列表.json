@@ -5571,7 +5571,8 @@
       "order": 247,
       "importance": "P0",
       "importanceLabel": "P0 必考",
-      "importanceLocked": false
+      "importanceLocked": false,
+      "lastAttemptedAt": "2026-09-06"
     },
     {
       "id": "interview/vue/vue更新机制.md",
