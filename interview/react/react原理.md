@@ -37,5 +37,7 @@ ReactDOM.render(element, container)
 
 ## 追问
 
+更新链路（调度 / 可中断 render / 不可中断 commit、双缓冲、优先级）见 [react更新原理](./react更新原理.md)。
+
 - Fiber 之后一次更新拆成哪几步？哪一段可以中断、哪一段必须一次做完？半成品会不会先画到页面上？
 - 优先级是干什么的？举一个高优插队、低优让路的例子。

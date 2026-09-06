@@ -1,6 +1,6 @@
 # Vue3 做了什么编译优化
 
-25k 一面过关线：能说出 **四件事 + 各自省了哪一步**；追问能讲清 **PatchFlag 必须配 Block**、**事件为什么进 `_cache` 而不是提到模块外**。只报 tree-shaking / Proxy 不够。
+25k 一面过关线：能说出 **四件事 + 各自省了哪一步**；静态提升要能补一句 **大块会预字符串化**；追问能讲清 **PatchFlag 必须配 Block**、**事件为什么进 `_cache` 而不是提到模块外**。只报 tree-shaking / Proxy 不够。
 
 ---
 
@@ -10,7 +10,7 @@ Vue 2 模板编完就是一份 render：**每次数据变，整棵 vnode 重建�
 
 Vue 3 模板结构编译期就能看清，所以把「谁静态、谁动态、动态的改哪」写进产物：
 
-1. 静态的提到 render 外面，别反复 `createVNode`
+1. 静态的提到 render 外面，别反复 `createVNode`；连续静态够大再编成 HTML 字符串，挂载走 `innerHTML`
 2. 动态的打 PatchFlag，patch 只比会变的字段
 3. 用 Block 把动态节点收成扁平名单，别为了找它们去遍历静态子树
 4. 内联事件缓存在实例上，函数引用别每次都新的，子组件才比较得过
@@ -37,6 +37,27 @@ Vue 3：静态节点提到 render **外面**（模块作用域 `_hoisted_1`）�
 组件 vnode 一般不这么提：组件有实例、有副作用，不能当纯静态节点复用。
 
 `v-once` 是你手动冻一块（里面可以有动态数据，算一次就停）。静态提升是编译器发现「这里完全没动态绑定」自动做。能提升的不用写 `v-once`。
+
+### 静态提升之后：预字符串化（stringifyStatic）
+
+提升只是少反复建 vnode。挂载时 20 个静态 vnode 仍是 20 次 `createElement`。
+
+连续静态节点够大（源码阈值：**20 个节点**，或 **5 个带静态绑定的元素**），`@vue/compiler-dom` 再砍一刀：整段编成 HTML，一个 `createStaticVNode`：
+
+```js
+const _hoisted_1 = createStaticVNode(
+  `<div class="foo"><p>a</p><p>b</p>…</div>`,
+  20
+)
+```
+
+运行时丢进临时容器的 `innerHTML`，再把节点搬到真正位置。更新直接跳过。N 个静态 vnode → **1 个静态 vnode + 1 次插入**。
+
+**这是静态提升的下一刀，不是第五件独立的事。** 笔记上面那个单独的 tip `p` 只 hoist，达不到阈值不 stringify。
+
+不能 stringify：slot、组件、`v-once`、`tr`/`td` 这类 table 内部标签（`innerHTML` 插进去和手插 DOM 结构会不一致）。只在 **构建时的 compiler-dom** 做，浏览器只消费产物。
+
+和 SSR 不是一回事：SSR 是整页输出 HTML 字符串；这是客户端大块静态用 `createStaticVNode`。
 
 ---
 
@@ -151,7 +172,7 @@ Vue 3 里组件监听器是 `onXxx` **props**。父组件更新时会浅比较�
 ```
 Vue 2：data 变 → 整份 render → 整棵 vnode 新建 → 全量递归 diff → 改 DOM
 
-Vue 3：data 变 → 静态 vnode 直接复用
+Vue 3：data 变 → 静态 vnode 直接复用（大块可能是一段 innerHTML）
       → 只创建动态 vnode
       → Block 按 dynamicChildren 找人
       → 按 PatchFlag 只改该改的 DOM
@@ -168,7 +189,13 @@ Vue 3：data 变 → 静态 vnode 直接复用
 有。列表还是 keyed / 最长递增子序列那套。编译优化是少进入 diff、进去了也少比字段。
 
 **静态提升提升的是 DOM 吗？**  
-不是。是 vnode / 静态 props 对象。
+不是。是 vnode / 静态 props 对象。预字符串化才在**首次挂载**用 `innerHTML` 一次插 DOM。
+
+**静态提升和预字符串化什么区别？**  
+提升：vnode 提到 render 外，挂载仍一个个 `createElement`。字符串化：连续静态够大，编成一段 HTML，一次插入，更新跳过。小块只 hoist。
+
+**为什么有 20 / 5 的阈值？**  
+`innerHTML` 解析也有成本，小块不如直接建 DOM。编译还要再走一遍树。
 
 **PatchFlag 运行时自己分析行不行？**  
 不行。模板编译期才知道「这个节点永远只改 text」。手写 `h()` 没有 flag。
