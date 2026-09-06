@@ -8,7 +8,6 @@ const {
   getUntestedQuestions,
   getImportanceLabel,
   getPassThreshold,
-  pickWithBalancedRatio,
   pickWeightedFromPool,
   PROJECT_ROOT,
   todayStr,
@@ -36,6 +35,7 @@ const QUESTION_COUNT = KNOWLEDGE_COUNT + READING_COUNT + HANDWRITTEN_COUNT;
 /**
  * 10 道八股必须覆盖的方向（一面广度）
  * 出题顺序：原理开场 → 网络/框架/TS/Node → 工程化 → 微前端
+ * 原理 = Vue / React / Webpack 实现原理，不是浏览器 / JS 基础。
  */
 const KNOWLEDGE_DOMAINS = [
   { id: 'principle', label: '原理' },
@@ -48,11 +48,23 @@ const KNOWLEDGE_DOMAINS = [
   { id: 'microfrontend', label: '微前端' },
 ];
 
+/** Vue / React / Webpack 目录才可能当「原理」开场 */
+const PRINCIPLE_STACK_PATH_RE = /^interview\/(vue3?|react|webpack)\//;
+
+/** 实现原理题：响应式、Fiber、HMR、编译优化等；不含常用配置 / 插槽 / 生命周期 API */
+const PRINCIPLE_TOPIC_RE =
+  /原理|源码|响应式|fiber|虚拟dom|virtual\s*dom|diff|编译优化|patchflag|静态提升|hmr|热更新|打包构建|nexttick|更新机制|setstate|事件系统/i;
+
 const EXTRA_KNOWLEDGE = KNOWLEDGE_COUNT - KNOWLEDGE_DOMAINS.length;
 const LEVEL_ORDER = { P0: 0, P1: 1, P2: 2, P3: 3 };
 
-/** 一面专用：未测 40%，到期 / 未学会均分剩下 60%。自我考察仍走 25k 表的 25/25/50。 */
-const MOCK_PICK_RATIOS = { due: 0.3, notLearned: 0.3, untested: 0.4 };
+/**
+ * 一面专用抽题：70% 未学会 ✗。
+ * 剩下 30% 先抽已学会且到期；到期池为空才抽未测。
+ * 自我考察仍走 25k 表的 25/25/50。
+ */
+const MOCK_NOT_LEARNED_RATIO = 0.7;
+const MOCK_PICK_RATIOS = { due: 0.3, notLearned: 0.7, untested: 0 };
 
 /** 八股文排除：无独立答案文件的目录/类目 */
 const KNOWLEDGE_EXCLUDE_PATH_RE =
@@ -81,9 +93,23 @@ function isHandwrittenEligible(q) {
   );
 }
 
-function getKnowledgeDomain(q) {
+function questionHaystack(q) {
   const p = (q.path || '').replace(/\\/g, '/');
-  const haystack = `${p} ${q.category || ''} ${q.title || ''}`;
+  return { p, haystack: `${p} ${q.category || ''} ${q.title || ''}` };
+}
+
+/**
+ * 原理槽：只抽 Vue / React / Webpack 的实现原理。
+ * 浏览器、Performance、JS 基础（闭包 / 原型链 / Event Loop）不算原理开场。
+ * 题目本身仍归 vue / react / engineering，避免和后续覆盖槽抢分类。
+ */
+function isPrincipleQuestion(q) {
+  const { p, haystack } = questionHaystack(q);
+  return PRINCIPLE_STACK_PATH_RE.test(p) && PRINCIPLE_TOPIC_RE.test(haystack);
+}
+
+function getKnowledgeDomain(q) {
+  const { p, haystack } = questionHaystack(q);
 
   if (p.startsWith('interview/微前端/') || /微前端|qiankun|模块联邦|module federation/.test(haystack)) {
     return 'microfrontend';
@@ -110,16 +136,12 @@ function getKnowledgeDomain(q) {
   if (p.startsWith('interview/react/') || /useEffect和useLayoutEffect/.test(haystack)) {
     return 'react';
   }
-  if (
-    p.startsWith('interview/js/')
-    || p.startsWith('interview/es5/')
-    || p.startsWith('interview/es6/')
-    || p.startsWith('interview/浏览器/')
-    || /esModules和commonjs/.test(haystack)
-  ) {
-    return 'principle';
-  }
   return null;
+}
+
+function matchesCoverageDomain(q, domainId) {
+  if (domainId === 'principle') return isPrincipleQuestion(q);
+  return getKnowledgeDomain(q) === domainId;
 }
 
 function domainLabel(id) {
@@ -209,14 +231,69 @@ function toCoverageItem(q, today, stageLabel = '覆盖抽') {
   };
 }
 
-function pickFromPools(pools, excludeIds, ratios) {
+/** 70% 未学会；30% 已学会到期，没有到期才未测。某池为空则顺延。 */
+function pickMockFromPools(due, notLearned, untested) {
+  if (notLearned.length === 0 && due.length === 0 && untested.length === 0) {
+    return { picked: null, pickSource: null };
+  }
+  const preferNotLearned = Math.random() < MOCK_NOT_LEARNED_RATIO;
+  if (preferNotLearned && notLearned.length > 0) {
+    return { picked: pickWeightedFromPool(notLearned), pickSource: 'notLearned' };
+  }
+  if (due.length > 0) {
+    return { picked: pickWeightedFromPool(due), pickSource: 'due' };
+  }
+  if (untested.length > 0) {
+    return { picked: pickWeightedFromPool(untested), pickSource: 'untested' };
+  }
+  if (notLearned.length > 0) {
+    return { picked: pickWeightedFromPool(notLearned), pickSource: 'notLearned' };
+  }
+  return { picked: null, pickSource: null };
+}
+
+function pickFromPools(pools, excludeIds) {
   const filter = (arr) => arr.filter((d) => !excludeIds.has(d.question.id));
-  return pickWithBalancedRatio(
+  return pickMockFromPools(
     filter(pools.due),
     filter(pools.notLearned),
     filter(pools.untested),
-    ratios,
   );
+}
+
+/** 必考方向：未学会 → 未测 → 已学会到期。没有未学会时先补覆盖，不先占用到期复习。 */
+function pickCoverageFromPools(due, notLearned, untested) {
+  if (notLearned.length > 0) {
+    return { picked: pickWeightedFromPool(notLearned), pickSource: 'notLearned' };
+  }
+  if (untested.length > 0) {
+    return { picked: pickWeightedFromPool(untested), pickSource: 'untested' };
+  }
+  if (due.length > 0) {
+    return { picked: pickWeightedFromPool(due), pickSource: 'due' };
+  }
+  return { picked: null, pickSource: null };
+}
+
+function countNotLearnedPicks(picks) {
+  return picks.filter((p) => p.pickSource === 'notLearned').length;
+}
+
+/** 未学会池里按 P0/P1 优先抽，不限方向。用于后面几题把整场补回约 70%。 */
+function pickAnyNotLearned(pool, excludeIds) {
+  const result = pickByImportanceTiers(
+    (cap) => {
+      const items = pool.filter(
+        (d) => !excludeIds.has(d.question.id) && withinImportance(d, cap),
+      );
+      if (items.length === 0) return { picked: null, pickSource: null };
+      return { picked: pickWeightedFromPool(items), pickSource: 'notLearned' };
+    },
+    pool.filter((d) => !excludeIds.has(d.question.id)),
+    excludeIds,
+  );
+  if (result.picked) result.pickSource = 'notLearned';
+  return result;
 }
 
 function withinImportance(d, cap) {
@@ -239,7 +316,7 @@ function pickByImportanceTiers(pickAtCap, fallbackItems, excludeIds) {
 }
 
 function pickRequiredDomain(domain, knowledgePools, data, today, excludeIds, minImportance) {
-  const inDomain = (q) => isKnowledgeEligible(q) && getKnowledgeDomain(q) === domain.id;
+  const inDomain = (q) => isKnowledgeEligible(q) && matchesCoverageDomain(q, domain.id);
   const filterPool = (arr, cap) => arr.filter(
     (d) => inDomain(d.question) && !excludeIds.has(d.question.id) && withinImportance(d, cap),
   );
@@ -257,11 +334,10 @@ function pickRequiredDomain(domain, knowledgePools, data, today, excludeIds, min
   }
 
   const result = pickByImportanceTiers(
-    (cap) => pickWithBalancedRatio(
+    (cap) => pickCoverageFromPools(
       filterPool(knowledgePools.due, cap),
       filterPool(knowledgePools.notLearned, cap),
       filterPool(knowledgePools.untested, cap),
-      MOCK_PICK_RATIOS,
     ),
     fallback,
     excludeIds,
@@ -286,11 +362,10 @@ function pickExtraKnowledge(knowledgePools, data, today, excludeIds, extraDomain
     .map((q) => toCoverageItem(q, today));
 
   const result = pickByImportanceTiers(
-    (cap) => pickWithBalancedRatio(
+    (cap) => pickMockFromPools(
       knowledgePools.due.filter((d) => prefer(d.question, cap)),
       knowledgePools.notLearned.filter((d) => prefer(d.question, cap)),
       knowledgePools.untested.filter((d) => prefer(d.question, cap)),
-      MOCK_PICK_RATIOS,
     ),
     fallback,
     excludeIds,
@@ -301,7 +376,7 @@ function pickExtraKnowledge(knowledgePools, data, today, excludeIds, extraDomain
 function pickManyFromPools(pools, data, excludeIds, count, fallbackItems) {
   const items = [];
   for (let i = 0; i < count; i += 1) {
-    let { picked, pickSource } = pickFromPools(pools, excludeIds, MOCK_PICK_RATIOS);
+    let { picked, pickSource } = pickFromPools(pools, excludeIds);
     if (!picked && fallbackItems) {
       picked = weightedPickOne(fallbackItems, excludeIds);
       pickSource = picked ? 'coverage' : null;
@@ -362,13 +437,27 @@ function pickSession(data, today = todayStr(), options = {}) {
   }
 
   const extraDomainUsed = new Set();
+  const markableTotal = KNOWLEDGE_COUNT + HANDWRITTEN_COUNT;
+  const notLearnedTarget = Math.ceil(markableTotal * MOCK_NOT_LEARNED_RATIO);
+
   for (let i = 0; i < EXTRA_KNOWLEDGE; i += 1) {
-    const result = pickExtraKnowledge(
-      knowledgePools, data, today, excludeIds, extraDomainUsed,
-    );
+    const behind = countNotLearnedPicks(knowledgePicks) < notLearnedTarget;
+    let result = behind
+      ? pickAnyNotLearned(knowledgePools.notLearned, excludeIds)
+      : null;
+    if (!result || !result.picked) {
+      result = pickExtraKnowledge(
+        knowledgePools, data, today, excludeIds, extraDomainUsed,
+      );
+    }
     if (!result.picked) break;
     excludeIds.add(result.picked.question.id);
     if (result.domainId) extraDomainUsed.add(result.domainId);
+    else if (result.picked) {
+      const domainId = getKnowledgeDomain(result.picked.question);
+      if (domainId) extraDomainUsed.add(domainId);
+      result.domainId = domainId;
+    }
     knowledgePicks.push(result);
   }
 
@@ -384,13 +473,30 @@ function pickSession(data, today = todayStr(), options = {}) {
     .filter(isHandwrittenEligible)
     .filter((q) => !wasAttemptedToday(q, today) && !isRetired(q))
     .map((q) => toCoverageItem(q, today));
-  const handwrittenPicks = pickManyFromPools(
-    handwrittenPools,
-    data,
-    excludeIds,
-    HANDWRITTEN_COUNT,
-    handwrittenFallback,
-  );
+  const handwrittenPicks = [];
+  for (let i = 0; i < HANDWRITTEN_COUNT; i += 1) {
+    const nlSoFar = countNotLearnedPicks(knowledgePicks) + countNotLearnedPicks(handwrittenPicks);
+    const behind = nlSoFar < notLearnedTarget;
+    let picked = null;
+    let pickSource = null;
+    if (behind) {
+      const forced = pickAnyNotLearned(handwrittenPools.notLearned, excludeIds);
+      picked = forced.picked;
+      pickSource = forced.pickSource;
+    }
+    if (!picked) {
+      const fallbackPick = pickFromPools(handwrittenPools, excludeIds);
+      picked = fallbackPick.picked;
+      pickSource = fallbackPick.pickSource;
+    }
+    if (!picked && handwrittenFallback.length) {
+      picked = weightedPickOne(handwrittenFallback, excludeIds);
+      pickSource = picked ? 'coverage' : null;
+    }
+    if (!picked) break;
+    excludeIds.add(picked.question.id);
+    handwrittenPicks.push({ item: picked, pickSource });
+  }
 
   const questions = [];
   let slot = 1;
@@ -447,7 +553,7 @@ function pickSession(data, today = todayStr(), options = {}) {
       totalUntested: untested.length,
     },
     questions,
-    note: '10 八股必须覆盖 8 方向；再加 1 阅读 + 2 手写。达标打 ✓，未达标打 ✗。三类 30%/30%/40% 混抽。不要把后续题目提前告诉候选人。',
+    note: '10 八股必须覆盖 8 方向；再加 1 阅读 + 2 手写。必考方向：未学会→未测→到期。后面几题若未学会不足 70% 则只抽未学会，把整场补回去。不要把后续题目提前告诉候选人。',
   };
 }
 
@@ -460,6 +566,7 @@ function loadReviewData() {
 module.exports = {
   MOCK_PROFILE,
   MOCK_PICK_RATIOS,
+  MOCK_NOT_LEARNED_RATIO,
   KNOWLEDGE_COUNT,
   READING_COUNT,
   HANDWRITTEN_COUNT,
@@ -468,6 +575,7 @@ module.exports = {
   loadReviewData,
   pickSession,
   getKnowledgeDomain,
+  isPrincipleQuestion,
   scanReadingCodeQuestions,
   getReadingPool,
   isKnowledgeEligible,
