@@ -663,13 +663,17 @@ function formatReviewDate(date) {
   return date || '';
 }
 
+function escapeMdCell(text) {
+  return String(text ?? '').replace(/\|/g, '\\|');
+}
+
 function syncMarkdownTable(data) {
   const stages = data.reviewStages;
   const header = ['#', '题目', '是否学会', '不再提问', '重要程度', '来源', '首次学会', ...stages.map((s) => s.label)];
   const sep = header.map((_, i) => (i < 7 ? '---' : ':---:'));
   const rows = data.questions.map((q) => [
     String(q.order),
-    q.title,
+    escapeMdCell(q.title),
     formatLearned(q),
     q.retired ? '✓' : '',
     q.importanceLabel || q.importance || '',
@@ -681,8 +685,6 @@ function syncMarkdownTable(data) {
   const due = getDueQuestions(data);
   const notLearned = getNotLearnedQuestions(data);
   const untested = getUntestedQuestions(data);
-  const ratios = migratePickRatios(data.pickRatios);
-  const ratioText = `${Math.round(ratios.due * 100)}% 到期 · ${Math.round(ratios.notLearned * 100)}% 未学会 · ${Math.round(ratios.untested * 100)}% 未测`;
   const dueByStage = {};
   const dueByImportance = { P0: 0, P1: 0, P2: 0, P3: 0 };
   for (const d of due) {
@@ -718,20 +720,18 @@ function syncMarkdownTable(data) {
 > 简历未写的内容（如 CI/CD、Monorepo、NestJS、埋点）已降级为 P3  
 > 分级：P0 必考 ${impCounts.P0 || 0} · P1 高频 ${impCounts.P1 || 0} · P2 了解 ${impCounts.P2 || 0} · P3 冷门 ${impCounts.P3 || 0}  
 > 学会状态：✓ 已学会 ${learnedStats.yes} · ✗ 未学会 ${learnedStats.no} · 未测 ${learnedStats.blank} · 不再提问 ${retiredCount}  
-> 抽题策略：${ratioText}（空池时其余按比例分配）；**当天已做过的题（对错都算）当天不再抽**；**不再提问永不抽**（须你主动说才打钩）  
 > 数据文件：[\`25k考察列表.json\`](./25k考察列表.json)  
 > 最后更新：${data.updatedAt}
 
 ## 使用方式
 
-1. 说 **「自我考察」** 或 **「模拟面试」** — 三类混抽（${ratioText}）
+1. 说 **「自我考察」** 或 **「模拟面试」**
 2. 说 **「自我考察 P2」** — 可指定最低档位
 3. **25k 达标** → 是否学会 **✓**，「首次学会」写入日期，**从该日起**算遗忘曲线。打 ✓ 须追问后确认中位数一面能过；半截答案 / 追问空白不算过
 4. **未达标** → **✗** 未学会，**清空**首次学会与 R 列，**不进入**遗忘曲线
-5. **未测**（空）→ 不参与遗忘曲线；与 ✗、到期题按设定比例混抽
-6. **当天已做过**（对错都算）→ 当天不再抽
-7. 说 **「这题不再提问」** → 打钩后**永远不再抽**（不会因为通过/没过自动打）
-8. 更新题库：\`node .cursor/skills/spaced-review/scripts/init-questions.js\`
+5. **未测**（空）→ 不参与遗忘曲线
+6. 说 **「这题不再提问」** → 打钩后不再出现在表的抽题范围（不会因为通过/没过自动打）
+7. 更新题库：\`node .cursor/skills/spaced-review/scripts/init-questions.js\`
 
 ## 是否学会说明
 
@@ -739,7 +739,7 @@ function syncMarkdownTable(data) {
 |------|------|
 | **✓** | 25k 达标（追问后中位数一面能过）；「首次学会」= 锚点日期（如 2026-08-26） |
 | **✗** | 考过未达标 / 同步标记；**无**首次学会/R 列；**不参与**遗忘曲线 |
-| **（空）** | 未测；与 ✗、到期题按设定比例混抽 |
+| **（空）** | 未测 |
 
 「不再提问」列打 ✓ = 你主动说毕业了，抽题/模拟面试都跳过。通过或没过都**不会**自动打这钩。
 
@@ -786,9 +786,7 @@ R 列显示**实际日期**（如 \`2026-08-27\`），空白 = 该节点尚未�
 - **待复习（✓ 且到期）**：${due.length} 道（P0 ${dueByImportance.P0} · P1 ${dueByImportance.P1} · P2 ${dueByImportance.P2} · P3 ${dueByImportance.P3}）
 - **未学会 ✗**：${notLearned.length} 道
 - **未测（空）**：${untested.length} 道
-- **混抽比例**：${ratioText}
-- **当天已做过（对错都算）**：当天不再抽
-- **不再提问**：${retiredCount} 道（永不抽，须主动说才打钩）
+- **不再提问**：${retiredCount} 道
 ${Object.entries(dueByStage).map(([k, v]) => `- ${k} 到期：${v} 道`).join('\n') || '- 暂无到期复习 🎉'}
 
 ## 题目进度表

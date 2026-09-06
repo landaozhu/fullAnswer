@@ -29,6 +29,22 @@ const ARTICLE_PATH_RE =
 const EXCLUDE_PATH_RE = /interview\/网络\/为什么跨域要发送options请求\.md$/;
 const EXCLUDE_TITLE_RE = /复杂请求为什么发送options|为什么跨域要发送options/i;
 
+/** 人工从考察表剔除：非面试题 / 过时题 */
+const EXCLUDE_TITLES = new Set([
+  '雪碧图如何使用',
+  'Etag是什么？',
+  'react vue jq三者之间的区别',
+  '大疆今年的机械笔试难吗？',
+  '你觉得实习只能是打杂吗？',
+  '你秋招挂麻了关我什么事啊？？？',
+  '我是不是要转正了？',
+  '武汉小程序长列表越滑越卡？一次页面性能排查与渲染优化复盘',
+  '一. 初步认知框架：为什么Agent评测比Model评测更难 Anthropic遇到的问题 Reactive Loop 被动式响应循环，可以理解为是一种亡羊补牢',
+  '有深度的简历长什么样？',
+  '怎么给家人解释你的工作？',
+  '最近整理一个企业小程序项目时，遇到一个很典型的问题。页面刚打开时很顺。列表只有几十条数据时也没有明显异常。但随着用户不断下拉，页面开始出现轻微卡顿；继续滚动以后',
+]);
+
 function isFollowUpSubtopic(relPath) {
   const normalized = relPath.replace(/\\/g, '/');
   for (const [dir, keepFiles] of Object.entries(FOLLOWUP_DIRS)) {
@@ -81,6 +97,7 @@ function shouldExcludeQuestion(item) {
   const relPath = (item.path || '').replace(/\\/g, '/');
   const combined = `${item.title || ''} ${relPath}`;
 
+  if (EXCLUDE_TITLES.has(item.title || '')) return true;
   if (isFollowUpSubtopic(relPath)) return true;
   if (EXCLUDE_PATH_RE.test(relPath)) return true;
   if (EXCLUDE_TITLE_RE.test(combined)) return true;
