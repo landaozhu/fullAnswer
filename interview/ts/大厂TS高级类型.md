@@ -50,30 +50,77 @@ const labels: Record<Role, string> = {
 
 ## Partial / Required / Readonly
 
+三个都是 **改字段修饰，不增不删字段**。下面带 `type Xxx<T> =` 的是 **TS 内置源码**（`lib.es5.d.ts`），不是业务里要你手写的接口。
+
+**Partial：全变成可选。** PATCH、草稿，只传要改的那几个。
+
 ```ts
+// 内置源码：把 T 的每个字段拷一遍，并加上 ?
 type Partial<T> = { [P in keyof T]?: T[P] }
+//                   │    │        │  └─ 值还是原来的类型，name 仍是 string
+//                   │    │        └─ ? = 这个字段变成可选
+//                   │    └─ keyof T = 取出全部键，User 就是 'id' | 'name' | 'password'
+//                   └─ [P in ...] = 映射：联合里每个键 P，都变成新对象的一个字段
 
 function updateUser(id: number, patch: Partial<User>) {}
 updateUser(1, { name: '兰' }) // 不用把 User 全填上
 ```
 
-`Required` 是把 `?` 去掉（源码里是 `-?`）。`Readonly` 加上 `readonly`。
+展开后等价于：
+
+```ts
+type PartialUser = { id?: number; name?: string; password?: string }
+```
+
+**Required：全变成必填。** 源码用 `-?` 把已有的 `?` 拿掉。补完默认值、要保证字段齐了再用。
+
+```ts
+// 内置源码：拷全部字段，-? 表示去掉可选
+type Required<T> = { [P in keyof T]-?: T[P] }
+```
+
+**Readonly：全变成只读。** 加上 `readonly`，赋值会报错。配置、冻结后的对象。
+
+```ts
+// 内置源码：拷全部字段，左边加 readonly
+type Readonly<T> = { readonly [P in keyof T]: T[P] }
+```
 
 ## Pick / Omit
 
-```ts
-type Pick<T, K extends keyof T> = { [P in K]: T[P] }
-type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>
+两个都是 **从对象类型里挑字段，得到一个新对象类型**。方向相反：Pick 是白名单，Omit 是黑名单。下面同样是 **内置源码**。
 
-type UserVO = Omit<User, 'password'>
+**Pick：只要列出的字段。** 列表卡片、组件 props，只暴露几个。
+
+```ts
+// 内置源码：K 必须是 T 的键；只映射 K 里那些字段
+type Pick<T, K extends keyof T> = { [P in K]: T[P] }
+
 type UserCard = Pick<User, 'id' | 'name'>
+// 结果：{ id: number; name: string }
+// password 根本不在这个类型里
 ```
 
-面试原话：**Omit = Pick + Exclude**。先 `keyof` 拿键，`Exclude` 删掉不要的，再 `Pick` 拼回来。
+**Omit：去掉列出的字段，其余全留。** 对外 VO 去掉 password、去掉内部字段。
+
+```ts
+// 内置源码：自己不映射，套 Pick + Exclude
+type Omit<T, K extends keyof any> = Pick<T, Exclude<keyof T, K>>
+//                                          └─ 全部键里删掉 K，剩下的再 Pick 回来
+
+type UserVO = Omit<User, 'password'>
+// 结果：{ id: number; name: string }
+// 等价于 Pick<User, 'id' | 'name'>，但你不用把要留的键全写一遍
+```
+
+怎么选：你能数清「要哪几个」→ `Pick`；你能数清「不要哪几个」→ `Omit`。User 有 10 个字段只藏 password，写 Omit 一个键，别写 Pick 九个键。
+
+面试原话：**Omit = Pick + Exclude**。先 `keyof T` 拿到全部键，`Exclude` 删掉不要的，再 `Pick` 把剩下的拼成对象。Omit 自己不会映射字段，是套了 Pick。
 
 ## Exclude / Extract（操作的是联合，不是对象）
 
 ```ts
+// 内置源码：联合里每个成员，能赋值给 U 的变成 never（删掉），否则留下
 type Exclude<T, U> = T extends U ? never : T
 type T = Exclude<'a' | 'b' | 'c', 'c'> // 'a' | 'b'
 ```

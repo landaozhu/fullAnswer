@@ -25,8 +25,9 @@ const ARTICLE_TITLE_RE =
 const ARTICLE_PATH_RE =
   /\/优化\/|\/场景题\/|jquery源码|react15\.6\.2|react-quill|微信小程序|第一次看 Vue2|skill\.md|SOP\.md|harness|xlsx/i;
 
-/** 追问子题 / 面经变体：已有母题覆盖，不再单独抽 */
-const EXCLUDE_PATH_RE = /interview\/网络\/为什么跨域要发送options请求\.md$/;
+/** 追问子题 / 面经变体 / 用户要求移出考察表 */
+const EXCLUDE_PATH_RE =
+  /interview\/网络\/为什么跨域要发送options请求\.md$|interview\/ts\/方法重载\.md$/;
 const EXCLUDE_TITLE_RE = /复杂请求为什么发送options|为什么跨域要发送options/i;
 
 /** 人工从考察表剔除：非面试题 / 过时题 */
@@ -43,6 +44,7 @@ const EXCLUDE_TITLES = new Set([
   '有深度的简历长什么样？',
   '怎么给家人解释你的工作？',
   '最近整理一个企业小程序项目时，遇到一个很典型的问题。页面刚打开时很顺。列表只有几十条数据时也没有明显异常。但随着用户不断下拉，页面开始出现轻微卡顿；继续滚动以后',
+  '方法重载',
 ]);
 
 function isFollowUpSubtopic(relPath) {

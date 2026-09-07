@@ -22,7 +22,7 @@
       "Vite 深度（对比题除外）"
     ]
   },
-  "updatedAt": "2026-09-06",
+  "updatedAt": "2026-09-07",
   "pickRatios": {
     "due": 0.25,
     "notLearned": 0.25,
@@ -1839,29 +1839,6 @@
       "importanceLocked": false
     },
     {
-      "id": "interview/ts/方法重载.md",
-      "title": "方法重载",
-      "category": "ts",
-      "source": "interview",
-      "path": "interview/ts/方法重载.md",
-      "learned": "no",
-      "firstLearnedAt": null,
-      "reviews": {
-        "r0": null,
-        "r1": null,
-        "r2": null,
-        "r3": null,
-        "r4": null,
-        "r5": null,
-        "r6": null
-      },
-      "order": 81,
-      "importance": "P1",
-      "importanceLabel": "P1 高频",
-      "importanceLocked": false,
-      "lastAttemptedAt": "2026-08-31"
-    },
-    {
       "id": "interview/handwritten/防抖.md",
       "title": "防抖",
       "category": "handwritten",
@@ -1878,7 +1855,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 82,
+      "order": 81,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -1901,7 +1878,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 83,
+      "order": 82,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -1923,7 +1900,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 84,
+      "order": 83,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -1945,11 +1922,11 @@
         "r5": null,
         "r6": null
       },
-      "order": 85,
+      "order": 84,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
-      "lastAttemptedAt": "2026-09-03"
+      "lastAttemptedAt": "2026-09-07"
     },
     {
       "id": "interview/js/高性能渲染十万条数据.md",
@@ -1968,7 +1945,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 86,
+      "order": 85,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -1991,7 +1968,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 87,
+      "order": 86,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -2014,7 +1991,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 88,
+      "order": 87,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2036,7 +2013,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 89,
+      "order": 88,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -2058,7 +2035,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 90,
+      "order": 89,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -2081,7 +2058,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 91,
+      "order": 90,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2104,7 +2081,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 92,
+      "order": 91,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -2127,7 +2104,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 93,
+      "order": 92,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2150,7 +2127,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 94,
+      "order": 93,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -2172,7 +2149,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 95,
+      "order": 94,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2195,7 +2172,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 96,
+      "order": 95,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -2218,7 +2195,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 97,
+      "order": 96,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -2240,7 +2217,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 98,
+      "order": 97,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2263,7 +2240,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 99,
+      "order": 98,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -2286,7 +2263,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 100,
+      "order": 99,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2308,7 +2285,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 101,
+      "order": 100,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -2330,7 +2307,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 102,
+      "order": 101,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2353,7 +2330,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 103,
+      "order": 102,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -2375,7 +2352,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 104,
+      "order": 103,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2397,7 +2374,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 105,
+      "order": 104,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2419,7 +2396,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 106,
+      "order": 105,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2442,7 +2419,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 107,
+      "order": 106,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -2464,7 +2441,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 108,
+      "order": 107,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2487,7 +2464,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 109,
+      "order": 108,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -2509,7 +2486,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 110,
+      "order": 109,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2531,7 +2508,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 111,
+      "order": 110,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2553,7 +2530,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 112,
+      "order": 111,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -2575,7 +2552,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 113,
+      "order": 112,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2597,7 +2574,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 114,
+      "order": 113,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -2619,7 +2596,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 115,
+      "order": 114,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2641,7 +2618,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 116,
+      "order": 115,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2663,7 +2640,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 117,
+      "order": 116,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2685,7 +2662,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 118,
+      "order": 117,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2708,7 +2685,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 119,
+      "order": 118,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2731,7 +2708,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 120,
+      "order": 119,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2754,7 +2731,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 121,
+      "order": 120,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2777,7 +2754,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 122,
+      "order": 121,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -2799,7 +2776,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 123,
+      "order": 122,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2821,7 +2798,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 124,
+      "order": 123,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2844,7 +2821,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 125,
+      "order": 124,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2866,7 +2843,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 126,
+      "order": 125,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2888,7 +2865,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 127,
+      "order": 126,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -2911,7 +2888,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 128,
+      "order": 127,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -2933,7 +2910,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 129,
+      "order": 128,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2955,7 +2932,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 130,
+      "order": 129,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2977,7 +2954,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 131,
+      "order": 130,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -2999,7 +2976,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 132,
+      "order": 131,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -3022,7 +2999,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 133,
+      "order": 132,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -3045,7 +3022,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 134,
+      "order": 133,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -3068,7 +3045,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 135,
+      "order": 134,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3090,7 +3067,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 136,
+      "order": 135,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -3112,7 +3089,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 137,
+      "order": 136,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -3135,7 +3112,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 138,
+      "order": 137,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -3157,7 +3134,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 139,
+      "order": 138,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -3179,7 +3156,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 140,
+      "order": 139,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3201,7 +3178,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 141,
+      "order": 140,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -3223,7 +3200,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 142,
+      "order": 141,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3245,7 +3222,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 143,
+      "order": 142,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3267,7 +3244,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 144,
+      "order": 143,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3289,7 +3266,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 145,
+      "order": 144,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3311,7 +3288,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 146,
+      "order": 145,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3333,7 +3310,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 147,
+      "order": 146,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3355,7 +3332,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 148,
+      "order": 147,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3377,7 +3354,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 149,
+      "order": 148,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3399,7 +3376,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 150,
+      "order": 149,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3421,7 +3398,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 151,
+      "order": 150,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -3443,7 +3420,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 152,
+      "order": 151,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3465,7 +3442,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 153,
+      "order": 152,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3487,7 +3464,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 154,
+      "order": 153,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3509,7 +3486,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 155,
+      "order": 154,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -3532,7 +3509,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 156,
+      "order": 155,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3554,7 +3531,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 157,
+      "order": 156,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -3577,7 +3554,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 158,
+      "order": 157,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3599,7 +3576,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 159,
+      "order": 158,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3621,7 +3598,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 160,
+      "order": 159,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3643,7 +3620,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 161,
+      "order": 160,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3665,7 +3642,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 162,
+      "order": 161,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3687,7 +3664,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 163,
+      "order": 162,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3709,7 +3686,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 164,
+      "order": 163,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -3734,7 +3711,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 165,
+      "order": 164,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -3757,7 +3734,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 166,
+      "order": 165,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3779,7 +3756,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 167,
+      "order": 166,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3801,7 +3778,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 168,
+      "order": 167,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3823,7 +3800,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 169,
+      "order": 168,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3845,7 +3822,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 170,
+      "order": 169,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -3867,7 +3844,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 171,
+      "order": 170,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3889,7 +3866,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 172,
+      "order": 171,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3911,7 +3888,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 173,
+      "order": 172,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -3933,7 +3910,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 174,
+      "order": 173,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -3955,7 +3932,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 175,
+      "order": 174,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -3977,7 +3954,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 176,
+      "order": 175,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -3999,7 +3976,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 177,
+      "order": 176,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4021,7 +3998,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 178,
+      "order": 177,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4044,7 +4021,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 179,
+      "order": 178,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -4066,7 +4043,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 180,
+      "order": 179,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4088,7 +4065,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 181,
+      "order": 180,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -4110,7 +4087,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 182,
+      "order": 181,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4132,7 +4109,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 183,
+      "order": 182,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -4154,7 +4131,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 184,
+      "order": 183,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4177,7 +4154,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 185,
+      "order": 184,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -4199,7 +4176,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 186,
+      "order": 185,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -4221,7 +4198,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 187,
+      "order": 186,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -4243,7 +4220,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 188,
+      "order": 187,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -4265,7 +4242,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 189,
+      "order": 188,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4288,7 +4265,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 190,
+      "order": 189,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4311,7 +4288,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 191,
+      "order": 190,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -4333,7 +4310,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 192,
+      "order": 191,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true,
@@ -4356,7 +4333,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 193,
+      "order": 192,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4378,7 +4355,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 194,
+      "order": 193,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4400,7 +4377,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 195,
+      "order": 194,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4422,7 +4399,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 196,
+      "order": 195,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -4444,7 +4421,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 197,
+      "order": 196,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4466,7 +4443,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 198,
+      "order": 197,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4488,7 +4465,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 199,
+      "order": 198,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -4510,7 +4487,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 200,
+      "order": 199,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4532,7 +4509,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 201,
+      "order": 200,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4554,7 +4531,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 202,
+      "order": 201,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4577,7 +4554,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 203,
+      "order": 202,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4600,7 +4577,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 204,
+      "order": 203,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4622,7 +4599,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 205,
+      "order": 204,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -4644,7 +4621,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 206,
+      "order": 205,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4666,7 +4643,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 207,
+      "order": 206,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -4688,7 +4665,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 208,
+      "order": 207,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4711,7 +4688,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 209,
+      "order": 208,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4734,7 +4711,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 210,
+      "order": 209,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4756,7 +4733,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 211,
+      "order": 210,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4780,7 +4757,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 212,
+      "order": 211,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -4802,7 +4779,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 213,
+      "order": 212,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -4824,7 +4801,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 214,
+      "order": 213,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -4846,7 +4823,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 215,
+      "order": 214,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true,
@@ -4869,7 +4846,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 216,
+      "order": 215,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -4880,10 +4857,10 @@
       "category": "react",
       "source": "interview",
       "path": "interview/react/react原理.md",
-      "learned": "no",
-      "firstLearnedAt": null,
+      "learned": "yes",
+      "firstLearnedAt": "2026-09-07",
       "reviews": {
-        "r0": null,
+        "r0": "2026-09-07",
         "r1": null,
         "r2": null,
         "r3": null,
@@ -4891,11 +4868,11 @@
         "r5": null,
         "r6": null
       },
-      "order": 217,
+      "order": 216,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
-      "lastAttemptedAt": "2026-09-05"
+      "lastAttemptedAt": "2026-09-07"
     },
     {
       "id": "interview/浏览器/ready和onload的区别.md",
@@ -4914,7 +4891,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 218,
+      "order": 217,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -4936,7 +4913,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 219,
+      "order": 218,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -4959,7 +4936,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 220,
+      "order": 219,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -4981,7 +4958,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 221,
+      "order": 220,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true,
@@ -5004,7 +4981,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 222,
+      "order": 221,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5026,7 +5003,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 223,
+      "order": 222,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -5048,7 +5025,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 224,
+      "order": 223,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5070,7 +5047,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 225,
+      "order": 224,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -5092,7 +5069,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 226,
+      "order": 225,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -5115,7 +5092,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 227,
+      "order": 226,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -5137,7 +5114,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 228,
+      "order": 227,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -5160,7 +5137,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 229,
+      "order": 228,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -5185,7 +5162,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 230,
+      "order": 229,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -5210,7 +5187,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 231,
+      "order": 230,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5232,7 +5209,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 232,
+      "order": 231,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -5255,7 +5232,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 233,
+      "order": 232,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5277,7 +5254,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 234,
+      "order": 233,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5299,7 +5276,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 235,
+      "order": 234,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true,
@@ -5322,7 +5299,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 236,
+      "order": 235,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5344,7 +5321,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 237,
+      "order": 236,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5366,7 +5343,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 238,
+      "order": 237,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -5388,7 +5365,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 239,
+      "order": 238,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -5411,7 +5388,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 240,
+      "order": 239,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -5434,7 +5411,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 241,
+      "order": 240,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5456,7 +5433,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 242,
+      "order": 241,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true,
@@ -5479,7 +5456,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 243,
+      "order": 242,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true,
@@ -5502,7 +5479,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 244,
+      "order": 243,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5524,7 +5501,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 245,
+      "order": 244,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -5547,7 +5524,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 246,
+      "order": 245,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5569,7 +5546,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 247,
+      "order": 246,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5591,7 +5568,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 248,
+      "order": 247,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false,
@@ -5614,7 +5591,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 249,
+      "order": 248,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5636,7 +5613,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 250,
+      "order": 249,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -5658,7 +5635,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 251,
+      "order": 250,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -5680,7 +5657,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 252,
+      "order": 251,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5702,7 +5679,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 253,
+      "order": 252,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -5724,7 +5701,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 254,
+      "order": 253,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -5746,7 +5723,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 255,
+      "order": 254,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5768,7 +5745,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 256,
+      "order": 255,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5790,7 +5767,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 257,
+      "order": 256,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5812,7 +5789,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 258,
+      "order": 257,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -5834,7 +5811,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 259,
+      "order": 258,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5856,7 +5833,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 260,
+      "order": 259,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5878,7 +5855,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 261,
+      "order": 260,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5900,7 +5877,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 262,
+      "order": 261,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -5922,7 +5899,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 263,
+      "order": 262,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5944,7 +5921,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 264,
+      "order": 263,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -5966,7 +5943,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 265,
+      "order": 264,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -5988,7 +5965,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 266,
+      "order": 265,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6010,7 +5987,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 267,
+      "order": 266,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6032,7 +6009,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 268,
+      "order": 267,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6054,7 +6031,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 269,
+      "order": 268,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6076,7 +6053,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 270,
+      "order": 269,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6098,7 +6075,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 271,
+      "order": 270,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6120,7 +6097,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 272,
+      "order": 271,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6142,7 +6119,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 273,
+      "order": 272,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6164,7 +6141,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 274,
+      "order": 273,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6186,7 +6163,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 275,
+      "order": 274,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -6208,7 +6185,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 276,
+      "order": 275,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6230,7 +6207,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 277,
+      "order": 276,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6252,7 +6229,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 278,
+      "order": 277,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6274,7 +6251,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 279,
+      "order": 278,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6296,7 +6273,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 280,
+      "order": 279,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -6318,7 +6295,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 281,
+      "order": 280,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6340,7 +6317,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 282,
+      "order": 281,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -6362,7 +6339,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 283,
+      "order": 282,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6384,7 +6361,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 284,
+      "order": 283,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6406,7 +6383,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 285,
+      "order": 284,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6428,7 +6405,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 286,
+      "order": 285,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6450,7 +6427,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 287,
+      "order": 286,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6472,7 +6449,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 288,
+      "order": 287,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6494,7 +6471,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 289,
+      "order": 288,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6516,7 +6493,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 290,
+      "order": 289,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6538,7 +6515,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 291,
+      "order": 290,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6560,7 +6537,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 292,
+      "order": 291,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6582,7 +6559,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 293,
+      "order": 292,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6604,7 +6581,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 294,
+      "order": 293,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -6626,7 +6603,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 295,
+      "order": 294,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -6648,7 +6625,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 296,
+      "order": 295,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6670,7 +6647,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 297,
+      "order": 296,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6692,7 +6669,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 298,
+      "order": 297,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6714,7 +6691,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 299,
+      "order": 298,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6736,7 +6713,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 300,
+      "order": 299,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6758,7 +6735,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 301,
+      "order": 300,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6780,7 +6757,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 302,
+      "order": 301,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6802,7 +6779,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 303,
+      "order": 302,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6824,7 +6801,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 304,
+      "order": 303,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6846,7 +6823,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 305,
+      "order": 304,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6868,7 +6845,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 306,
+      "order": 305,
       "importance": "P3",
       "importanceLabel": "P3 冷门",
       "importanceLocked": false
@@ -6890,7 +6867,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 307,
+      "order": 306,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6912,7 +6889,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 308,
+      "order": 307,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -6934,7 +6911,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 309,
+      "order": 308,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false
@@ -6956,7 +6933,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 310,
+      "order": 309,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -6978,7 +6955,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 311,
+      "order": 310,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -7000,7 +6977,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 312,
+      "order": 311,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -7022,7 +6999,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 313,
+      "order": 312,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -7044,7 +7021,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 314,
+      "order": 313,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -7066,7 +7043,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 315,
+      "order": 314,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -7088,7 +7065,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 316,
+      "order": 315,
       "importance": "P2",
       "importanceLabel": "P2 了解",
       "importanceLocked": false
@@ -7110,7 +7087,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 317,
+      "order": 316,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": false
@@ -7132,7 +7109,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 318,
+      "order": 317,
       "importance": "P0",
       "importanceLabel": "P0 必考",
       "importanceLocked": true
@@ -7154,7 +7131,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 319,
+      "order": 318,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -7178,7 +7155,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 320,
+      "order": 319,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
@@ -7202,7 +7179,7 @@
         "r5": null,
         "r6": null
       },
-      "order": 321,
+      "order": 320,
       "importance": "P1",
       "importanceLabel": "P1 高频",
       "importanceLocked": false,
